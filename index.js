@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 //const mongooseConnection = require("./helpers/mongodb-connection");
-const connectDB = require("./config/db");
+const connectDB = require("./helpers/db");
 const PORT = 3000;
 const allEmployeeRoutes = require("./routes/allEmployees");
 
