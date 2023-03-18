@@ -1,13 +1,17 @@
 const express = require("express");
 const app = express();
-const mongooseConnection = require("./helpers/mongodb-connection");
+//const mongooseConnection = require("./helpers/mongodb-connection");
+const connectDB = require("./config/db");
 const PORT = 3000;
 const allEmployeeRoutes = require("./routes/allEmployees");
 
 const cors = require("cors");
 var path = require("path");
 var serveStatic = require("serve-static");
+
+connectDB();
 //mongooseConnection();
+app.use(express.urlencoded({ extended: false }));
 app.use(serveStatic(path.join(__dirname, "public-optimized")));
 app.use(serveStatic(path.join(__dirname, "public")));
 app.use(cors());
