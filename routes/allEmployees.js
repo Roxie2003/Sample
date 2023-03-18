@@ -1,5 +1,4 @@
 const express = require("express");
-const { getAllEmployees } = require("../controllers/employeeController");
 const router = express.Router();
 
 /*const allEmployees = {
@@ -413,7 +412,6 @@ const allEmployees = {
 };
 
 const allEmployee = async (req, res) => {
-  console.log(getAllEmployees);
   res.status(200).json(allEmployees);
   return;
 };
