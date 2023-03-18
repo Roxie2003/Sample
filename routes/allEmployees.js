@@ -420,9 +420,9 @@ const allEmployee = async (req, res) => {
 
 const getAllEmployees = async (req, res) => {
   try {
-    let allEmployees = await Employee.find();
+    //let allEmployees = await Employee.find();
 
-    res.send(allEmployees);
+    res.send("hii");
     //res.status(200).json({ data: allEmployees });
     return;
   } catch (error) {
