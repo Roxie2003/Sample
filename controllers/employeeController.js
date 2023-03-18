@@ -33,8 +33,7 @@ const createEmployee = async (req, res) => {
 const getAllEmployees = async (req, res) => {
   try {
     let allEmployees = await Employee.find();
-    res.send("HIi");
-    //res.status(200).json({ data: allEmployees });
+    res.status(200).json({ data: allEmployees });
     return;
   } catch (error) {
     res.status(400).json(error.message);
