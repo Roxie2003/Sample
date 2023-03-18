@@ -1,32 +1,24 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const app = express();
-const mongooseConnection = require("./helpers/mongodb-connection");
-const allEmployeeRoutes = require("./routes/allEmployees");
-const PORT = 8000;
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+dotenv.config();
 
-mongooseConnection();
-app.use(bodyParser.json());
+// const mongoAtlasUri = process.env.MONGO_URI
+const mongoAtlasUri =
+  "mongodb+srv://KapilMundada:Kapil123@atlascluster.beoc0fg.mongodb.net/?retryWrites=true&w=majority";
 
-const cors = require("cors");
-const path = require("path");
-const serveStatic = require("serve-static");
-
-app.use(serveStatic(path.join(__dirname, "public-optimized")));
-app.use(serveStatic(path.join(__dirname, "public")));
-app.use(cors());
-
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/api/employees", allEmployeeRoutes);
-app.get("/", (req, res) => {
-  res.status(200).send("HELLO...");
-});
-app.use((err, req, res, next) => {
-  //console.error(err.stack)
-  res.status(500).json(err);
-});
-
-app.listen(PORT, (req, res) => {
-  console.log(`Server is listening on port ${PORT}`);
-});
+const mongooseConnection = async () => {
+  try {
+    // Connect to the MongoDB cluster
+    await mongoose.set("strictQuery", false);
+    await mongoose.connect(mongoAtlasUri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+  } catch (e) {
+    console.log("could not connect: " + e);
+  }
+  const dbConnection = mongoose.connection;
+  dbConnection.on("error", (err) => console.log(`Connection error ${err}`));
+  dbConnection.once("open", () => console.log("Connected to DB!"));
+};
+module.exports = mongooseConnection;
