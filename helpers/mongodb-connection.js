@@ -9,7 +9,6 @@ const mongoAtlasUri =
 const mongooseConnection = async () => {
   try {
     // Connect to the MongoDB cluster
-    await mongoose.set("strictQuery", false);
     await mongoose.connect(mongoAtlasUri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,

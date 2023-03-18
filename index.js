@@ -7,7 +7,7 @@ const allEmployeeRoutes = require("./routes/allEmployees");
 const cors = require("cors");
 var path = require("path");
 var serveStatic = require("serve-static");
-mongooseConnection();
+//mongooseConnection();
 app.use(serveStatic(path.join(__dirname, "public-optimized")));
 app.use(serveStatic(path.join(__dirname, "public")));
 app.use(cors());
