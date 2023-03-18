@@ -37,7 +37,7 @@ const getAllEmployees = async (req, res) => {
     //res.status(200).json({ data: allEmployees });
     return;
   } catch (error) {
-    res.send("Byee");
+    res.status(400).json(error.message);
   }
 };
 
