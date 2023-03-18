@@ -22,10 +22,6 @@ app.use("/api/employees", allEmployeeRoutes);
 app.get("/", (req, res) => {
   res.status(200).send("HELLO...");
 });
-app.use((err, req, res, next) => {
-  //console.error(err.stack)
-  res.status(500).json(err);
-});
 
 app.listen(PORT, (req, res) => {
   console.log(`Server is listening on port ${PORT}`);

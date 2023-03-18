@@ -18,7 +18,6 @@ const mongooseConnection = async () => {
     console.log("could not connect: " + e);
   }
   const dbConnection = mongoose.connection;
-  console.log("connected");
   dbConnection.on("error", (err) => console.log(`Connection error ${err}`));
   dbConnection.once("open", () => console.log("Connected to DB!"));
 };
