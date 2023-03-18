@@ -1,6 +1,4 @@
 const mongoose = require("mongoose");
-const dotenv = require("dotenv");
-dotenv.config();
 
 // const mongoAtlasUri = process.env.MONGO_URI
 const mongoAtlasUri =
