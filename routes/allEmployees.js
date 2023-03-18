@@ -412,6 +412,7 @@ const allEmployees = {
 };
 
 const allEmployee = async (req, res) => {
+  console.log(getAllEmployees);
   res.status(200).json(allEmployees);
   return;
 };
