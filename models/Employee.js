@@ -1,7 +1,11 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-const employeeSchema = new mongoose.Schema(
+const EmployeeSchema = new mongoose.Schema(
   {
+    id: {
+      type: Number,
+      required: [true, "Id required"],
+    },
     name: {
       type: String,
       required: [true, "Please add name"],
@@ -56,4 +60,4 @@ const employeeSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
-module.exports = mongoose.model("Employee", employeeSchema);
+module.exports = mongoose.model("Employee", EmployeeSchema);
