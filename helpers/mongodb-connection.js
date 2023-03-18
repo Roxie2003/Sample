@@ -4,7 +4,7 @@ dotenv.config();
 
 // const mongoAtlasUri = process.env.MONGO_URI
 const mongoAtlasUri =
-  "mongodb+srv://KapilMundada:Kapil123@atlascluster.beoc0fg.mongodb.net/Employee_Payroll?retryWrites=true&w=majority";
+  "mongodb+srv://Ruchi:Roxie15@node-learn.am6ml.mongodb.net/storybooks?retryWrites=true&w=majority";
 
 const mongooseConnection = async () => {
   try {
