@@ -7,10 +7,11 @@ const mongoAtlasUri =
 const mongooseConnection = async () => {
   try {
     // Connect to the MongoDB cluster
-    await mongoose.connect(mongoAtlasUri, {
+    let conn = await mongoose.connect(mongoAtlasUri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
+    console.log(conn);
   } catch (e) {
     console.log("could not connect: " + e);
   }
