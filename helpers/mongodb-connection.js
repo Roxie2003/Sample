@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 // const mongoAtlasUri = process.env.MONGO_URI
 const mongoAtlasUri =
-  "mongodb+srv://RuchitaWagh:Ruchi03@atlascluster.beoc0fg.mongodb.net/Employee_Payroll?retryWrites=true&w=majority";
+  "mongodb+srv://vercel-admin-user:Jv0L2TY05SVxMboF@atlascluster.beoc0fg.mongodb.net/Employee_Payroll?retryWrites=true&w=majority";
 
 const mongooseConnection = async () => {
   try {
